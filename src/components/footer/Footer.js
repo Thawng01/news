@@ -1,0 +1,25 @@
+import React from "react";
+
+import "./footer.css";
+import FooterCategory from "./FooterCategory";
+import FooterContact from "./FooterContact";
+import FooterCountry from "./FooterCountry";
+import FooterSubscribe from "./FooterSubscribe";
+
+const Footer = () => {
+    return (
+        <div className="footer">
+            <div className="footer-menu">
+                <FooterCategory />
+                <FooterCountry />
+            </div>
+
+            <div className="footer-bottom">
+                <FooterContact />
+                <FooterSubscribe />
+            </div>
+        </div>
+    );
+};
+
+export default Footer;

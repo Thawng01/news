@@ -1,0 +1,56 @@
+.footer-subscribe {
+    width: 250px;
+}
+
+.footer-subscribe-title {
+    color: #fff;
+    text-align: center;
+}
+
+.footer-subscribe-text {
+    color: #fff;
+    padding: 12px 0;
+}
+
+.footer-subscription {
+    color: green;
+    text-align: center;
+    font-weight: 700;
+}
+
+.footer-subscribe-form > input {
+    padding: 8px;
+    border: none;
+    width: 100%;
+    margin: 13px 0;
+}
+
+.footer-subscribe-form > input:focus {
+    outline: none;
+}
+
+.footer-subscribe-submit-btn {
+    background-color: red;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-subscribe-error {
+    color: red;
+}
+
+@media screen and (max-width: 500px) {
+    .footer-subscribe {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-top: 15px;
+    }
+
+    .footer-subscribe-text {
+        text-align: center;
+    }
+}

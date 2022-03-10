@@ -1,0 +1,10 @@
+.popular-container {
+    display: flex;
+    height: 60vh;
+}
+
+@media screen and (min-width: 750px) {
+    .popular-container {
+        height: 75vh;
+    }
+}

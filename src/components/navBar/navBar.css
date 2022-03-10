@@ -1,0 +1,35 @@
+.nav-bar {
+    background-color: rgb(51, 50, 50);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.4s linear;
+    z-index: 99;
+}
+
+.nav-close {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: red;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-close-icon {
+    color: #fff;
+    font-size: 30px;
+}
+
+.nav-item-list-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}

@@ -1,0 +1,94 @@
+.recent-list {
+    margin-top: 20px;
+}
+
+.recent-title {
+    text-align: center;
+    padding: 10px 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.recent-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recent-list-item {
+    width: 270px;
+    height: 340px;
+    margin: 10px;
+}
+
+.recent-list-image {
+    height: 60%;
+    width: 100%;
+}
+
+.recent-list-detail {
+    margin-top: 5px;
+}
+
+.recent-list-author-label {
+    padding: 4px 0;
+}
+
+.recent-list-author {
+    font-weight: 600;
+}
+
+.recent-list-date {
+    color: gray;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.recent-paging-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recent-paging-left-btn,
+.recent-paging-right-btn {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all var(--speed) ease;
+    background-color: lightgray;
+}
+
+.recent-paging-left-btn:hover {
+    background-color: red;
+}
+.recent-paging-right-btn:hover {
+    background-color: red;
+}
+
+.recent-paging-icon {
+    font-size: 25px;
+    color: #fff;
+}
+
+.paging-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    background-color: #f1f1f1;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--speed) ease;
+}
+
+.paging-index:hover {
+    background-color: red;
+}

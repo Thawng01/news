@@ -1,0 +1,40 @@
+.header-menu-container {
+    margin: 0 10px;
+}
+
+.header-menu-lists-container {
+    display: flex;
+    list-style: none;
+}
+
+.header-menu-list-item {
+    margin: 0 8px;
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .health,
+    .business {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .technology,
+    .science {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .general {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .sport,
+    .entertain {
+        display: block;
+    }
+}

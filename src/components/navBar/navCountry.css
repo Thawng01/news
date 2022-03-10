@@ -1,0 +1,19 @@
+.nav-country {
+    margin-left: 40px;
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.showList {
+    transform: translateY(-20px);
+    opacity: 1;
+}
+
+.nav-country-title {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.nav-country-ul {
+    list-style: none;
+}

@@ -1,0 +1,14 @@
+.nav-category {
+    margin-right: 40px;
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.nav-category-title {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.nav-item-lists {
+    list-style: none;
+}
