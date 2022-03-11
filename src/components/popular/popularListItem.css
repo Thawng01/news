@@ -1,0 +1,46 @@
+.popular-list-container {
+    display: flex;
+    margin: 10px;
+    cursor: pointer;
+    width: 450px;
+}
+
+.popular-list-image {
+    height: 100px;
+    width: 100px;
+    user-select: none;
+}
+
+.popular-list-detail {
+    padding: 0 7px;
+}
+
+.popular-list-title {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    user-select: none;
+}
+
+.popular-list-title:hover {
+    text-decoration: underline;
+}
+
+.popular-list-date {
+    color: gray;
+    font-size: 14px;
+    font-style: italic;
+    user-select: none;
+}
+
+@media screen and (min-width: 670px) {
+    .popular-list-container {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .popular-list-container {
+        margin: 6px 0;
+    }
+}

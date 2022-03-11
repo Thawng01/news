@@ -22,7 +22,7 @@ export const countries = [
 
 export const about = [
     { id: 1, name: "Contact us" },
-    { id: 1, name: "Feedback" },
-    { id: 1, name: "Term of use" },
-    { id: 1, name: "Privacy policy" },
+    { id: 2, name: "Feedback" },
+    { id: 3, name: "Term of use" },
+    { id: 4, name: "Privacy policy" },
 ];

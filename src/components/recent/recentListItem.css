@@ -1,0 +1,79 @@
+.recent-list-item {
+    width: 350px;
+    height: 350px;
+    margin: 7px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.recent-list-title {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    user-select: none;
+}
+
+.recent-list-item:hover .recent-list-title {
+    text-decoration: underline;
+}
+
+.recent-list-image {
+    height: 65%;
+    width: 100%;
+    user-select: none;
+}
+
+.recent-image-overlay {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recent-read-more {
+    color: #fff;
+    background-color: red;
+    padding: 7px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.recent-list-item:hover .recent-image-overlay {
+    opacity: 1;
+}
+
+.recent-list-detail {
+    margin-top: 5px;
+}
+
+.recent-list-author-label {
+    padding: 4px 0;
+}
+
+.recent-list-author {
+    font-weight: 600;
+    user-select: none;
+}
+
+.recent-list-date {
+    color: gray;
+    font-size: 14px;
+    font-style: italic;
+    user-select: none;
+}
+
+@media screen and (min-width: 600px) {
+    .recent-list-item {
+        width: 270px;
+        height: 340px;
+    }
+}

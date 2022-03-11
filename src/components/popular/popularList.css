@@ -1,8 +1,8 @@
 .popular-list {
     display: flex;
-    flex: 0;
-    flex-direction: column;
-    overflow: auto;
+    flex: 4;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-left: 12px;
 }
 
@@ -14,29 +14,12 @@
     background-color: lightgray;
 }
 
-.popular-list-container {
-    display: flex;
-    margin: 6px 0;
-    cursor: pointer;
-}
-
-.popular-list-image {
-    height: 100px;
-    width: 100px;
-}
-
-.popular-list-detail {
-    padding: 0 7px;
-}
-
-.popular-list-date {
-    color: gray;
-    font-size: 14px;
-    font-style: italic;
-}
-
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 950px) {
     .popular-list {
         flex: 1.5;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        overflow: auto;
+        height: 75vh;
     }
 }

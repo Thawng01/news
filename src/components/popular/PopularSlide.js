@@ -1,27 +1,34 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import "./popularSlide.css";
 
 const PopularSlide = ({ articles }) => {
-    const indexRef = useRef(0);
+    const indexRef = useRef(1);
 
     const onSlide = (n) => {
         const tags = document.getElementsByClassName("popular-slide-item");
         let tagsL = tags.length;
 
-        if (n > tagsL - 1) {
-            indexRef.current = 0;
+        if (n > tagsL) {
+            indexRef.current = 1;
         }
         if (n < 1) {
-            indexRef.current = tagsL - 1;
+            indexRef.current = tagsL;
         }
 
         for (let i = 0; i < tagsL; i++) {
             tags[i].style.display = "none";
         }
-        tags[indexRef.current].style.display = "block";
+        tags[indexRef.current - 1].style.display = "block";
     };
+
+    useEffect(() => {
+        if (articles?.length > 0) {
+            onSlide(indexRef?.current);
+        }
+    }, [articles, onSlide]);
 
     function handleSlide(num) {
         const index = (indexRef.current += num);
@@ -38,9 +45,13 @@ const PopularSlide = ({ articles }) => {
                             className="popular-image fade"
                         />
                         <div className="popular-slide-details">
-                            <h2 className="popular-slide-title">
+                            <Link
+                                to={`detail/${item.title}`}
+                                state={{ type: "popular" }}
+                                className="popular-slide-title"
+                            >
                                 {item.title}
-                            </h2>
+                            </Link>
                             <p className="popular-slide-author">
                                 Author : {item?.author}
                             </p>

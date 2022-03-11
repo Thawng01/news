@@ -16,7 +16,7 @@ const Footer = () => {
 
             <div className="footer-bottom">
                 <FooterContact />
-                <FooterSubscribe />
+                <FooterSubscribe footer />
             </div>
         </div>
     );

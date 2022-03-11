@@ -14,35 +14,6 @@
     justify-content: center;
 }
 
-.recent-list-item {
-    width: 270px;
-    height: 340px;
-    margin: 10px;
-}
-
-.recent-list-image {
-    height: 60%;
-    width: 100%;
-}
-
-.recent-list-detail {
-    margin-top: 5px;
-}
-
-.recent-list-author-label {
-    padding: 4px 0;
-}
-
-.recent-list-author {
-    font-weight: 600;
-}
-
-.recent-list-date {
-    color: gray;
-    font-size: 14px;
-    font-style: italic;
-}
-
 .recent-paging-btns {
     display: flex;
     justify-content: center;

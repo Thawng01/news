@@ -3,12 +3,10 @@
 }
 
 .footer-subscribe-title {
-    color: #fff;
     text-align: center;
 }
 
 .footer-subscribe-text {
-    color: #fff;
     padding: 12px 0;
 }
 
@@ -23,6 +21,7 @@
     border: none;
     width: 100%;
     margin: 13px 0;
+    background-color: inherit;
 }
 
 .footer-subscribe-form > input:focus {

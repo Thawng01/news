@@ -1,0 +1,30 @@
+.detail-item-container {
+    padding: 0 30px;
+}
+
+.detail-title {
+    margin-bottom: 7px;
+}
+
+.detail-author {
+    font-weight: 600;
+    padding: 0 5px;
+}
+
+.detail-date {
+    color: grey;
+    font-style: italic;
+    padding: 0 5px;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+}
+
+.detail-read-more {
+    text-decoration: none;
+    padding: 0 4px;
+    color: red;
+}
