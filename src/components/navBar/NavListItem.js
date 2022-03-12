@@ -3,24 +3,20 @@ import useNavContext from "../../hook/useNavContext";
 
 import "./navListItem.css";
 
-const NavListItem = ({ name, country }) => {
+const NavListItem = ({ item, country }) => {
     const { setShowNav } = useNavContext();
 
     const handleShowNav = () => setShowNav(false);
 
-    let type = "category";
+    let type = `category/${item.name.toLowerCase()}`;
     if (country) {
-        type = "country";
+        type = `country/${item.code}`;
     }
 
     return (
         <li className="nav-item-list">
-            <Link
-                to={`/${type}/${name.toLowerCase()}`}
-                onClick={handleShowNav}
-                className="nav-name"
-            >
-                {name}
+            <Link to={type} onClick={handleShowNav} className="nav-name">
+                {item.name}
             </Link>
         </li>
     );

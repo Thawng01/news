@@ -20,7 +20,7 @@ const NavCategory = () => {
             <h2 className="nav-category-title">Categories</h2>
             <ul className="nav-item-lists">
                 {categories.map((item) => {
-                    return <NavListItem key={item.id} name={item.name} />;
+                    return <NavListItem key={item.id} item={item} />;
                 })}
             </ul>
         </div>

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Category from "./pages/Category";
+import Country from "./pages/Country";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 
@@ -11,7 +12,7 @@ const AppRoutes = () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="/category/:name" element={<Category />} />
-                    <Route path="/country/:name" element={<Category />} />
+                    <Route path="/country/:name" element={<Country />} />
                     <Route path="detail/:title" element={<Detail />} />
                 </Route>
             </Routes>

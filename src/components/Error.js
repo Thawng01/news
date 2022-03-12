@@ -1,13 +1,11 @@
 import "./error.css";
 
-const Error = ({ status }) => {
+const Error = ({ onRefresh }) => {
     return (
-        <div
-            className="error-message-container"
-            style={{ top: status === "error" ? 0 : -65 }}
-        >
-            <span className="error-message">
-                You have made too many requests recently
+        <div className="error-message-container">
+            <span className="error-message">Something went wrong!</span>
+            <span className="try-again-btn" onClick={onRefresh}>
+                Try again
             </span>
         </div>
     );

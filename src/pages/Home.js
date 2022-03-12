@@ -4,48 +4,51 @@ import { useDispatch, useSelector } from "react-redux";
 import "./home.css";
 import {
     fetchPopularNews,
+    selectedError,
+    selectedLoading,
     selectedPopularNews,
 } from "../stores/slices/popularSlice";
 import PopularSlide from "../components/popular/PopularSlide";
 import PopularList from "../components/popular/PopularList";
 import RecentList from "../components/recent/RecentList";
 import Error from "../components/Error";
+import Loading from "../components/Loading";
 
 const Home = () => {
-    const [error, setError] = useState(null);
+    const [refresh, setRefresh] = useState(false);
 
+    const loading = useSelector(selectedLoading);
+    const error = useSelector(selectedError);
     const popular = useSelector(selectedPopularNews);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchPopularNews());
-    }, [dispatch]);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [dispatch, refresh]);
 
-    useEffect(() => {
-        if (popular?.status === "error") {
-            setError(popular?.status);
-        }
-    }, [popular, setError]);
+    const handleRefresh = () => setRefresh(!refresh);
 
-    if (error) {
-        setTimeout(() => {
-            setError(null);
-        }, 3000);
-    }
+    let content;
 
-    return (
-        <>
-            <Error status={error} message={popular.message} />
-            <div className="home">
+    if (loading === "loading") {
+        content = <Loading />;
+    } else if (error !== null) {
+        content = <Error onRefresh={handleRefresh} />;
+    } else {
+        content = (
+            <>
                 <div className="popular-container">
                     <PopularSlide articles={popular?.articles} />
                     <PopularList articles={popular?.articles} />
                 </div>
 
                 <RecentList home />
-            </div>
-        </>
-    );
+            </>
+        );
+    }
+
+    return <div className="home">{content}</div>;
 };
 
 export default Home;

@@ -11,7 +11,7 @@ const FooterCategory = () => {
             <h3 className="footer-category-title">CATEGORIES</h3>
             <ul className="footer-item-lists">
                 {categories.map((item) => {
-                    return <NavListItem key={item.id} name={item.name} />;
+                    return <NavListItem key={item.id} item={item} />;
                 })}
             </ul>
         </div>

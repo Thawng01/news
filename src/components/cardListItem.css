@@ -27,7 +27,7 @@
 
 .recent-image-overlay {
     position: absolute;
-    height: 60%;
+    height: 65%;
     width: 100%;
     top: 0;
     left: 0;
@@ -57,11 +57,13 @@
 
 .recent-list-author-label {
     padding: 4px 0;
+    overflow: hidden;
 }
 
 .recent-list-author {
     font-weight: 600;
     user-select: none;
+    padding: 0 4px;
 }
 
 .recent-list-date {

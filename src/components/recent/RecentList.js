@@ -7,7 +7,7 @@ import {
     selectedRecentNews,
 } from "../../stores/slices/recentSlice";
 
-import RecentListItem from "./RecentListItem";
+import CardListItem from "../CardListItem";
 import RecentListPaging from "./RecentListPaging";
 
 const RecentList = ({ home }) => {
@@ -32,7 +32,7 @@ const RecentList = ({ home }) => {
             </h2>
             <div className="recent-list-container">
                 {recentNews?.articles?.map((item, i) => {
-                    return <RecentListItem key={i} item={item} />;
+                    return <CardListItem key={i} item={item} />;
                 })}
             </div>
 

@@ -10,7 +10,7 @@ const FooterCountry = () => {
             <h3 className="footer-category-title">COUNTRIES</h3>
             <ul className="footer-item-lists">
                 {countries.map((item) => {
-                    return <NavListItem key={item.id} name={item.name} />;
+                    return <NavListItem key={item.id} item={item} country />;
                 })}
             </ul>
         </div>

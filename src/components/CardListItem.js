@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-import "./recentListItem.css";
+import "./cardListItem.css";
 
-const RecentListItem = ({ item }) => {
+const CardListItem = ({ item }) => {
     return (
         <div className="recent-list-item">
             <img src={item.urlToImage} className="recent-list-image" />
@@ -40,4 +40,4 @@ const RecentListItem = ({ item }) => {
     );
 };
 
-export default RecentListItem;
+export default CardListItem;

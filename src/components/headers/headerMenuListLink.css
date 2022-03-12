@@ -1,7 +1,7 @@
 .menu-list-label {
     color: #fff;
     user-select: none;
-    padding: 9px 12px;
+    padding: 7px 12px;
     text-decoration: none;
     transition: all 0.6s ease;
     border-radius: 1.4px;
@@ -10,4 +10,5 @@
 
 .menu-list-label:hover {
     background-color: red;
+    color: #fff;
 }
