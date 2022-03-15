@@ -1,0 +1,77 @@
+.contact {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+}
+
+.contact-form-controls {
+    position: relative;
+    margin: 20px 0;
+}
+
+.contact-form-controls input {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.contact-form-controls label {
+    position: absolute;
+    left: 6px;
+    bottom: 5px;
+    transform: translateY(0px);
+    color: gray;
+    transition: all 0.5s ease;
+}
+
+.contact-form-controls input:focus {
+    outline: none;
+}
+
+.moveUpLabel {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.contact-message {
+    margin: 15px 0 15px 0;
+    padding: 6px;
+    resize: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.contact-message:focus {
+    outline: none;
+    border: 1.5px solid #280253;
+}
+
+.moveLabel {
+    transform: translate(-10px, -25px);
+    transition: all var(--speed) ease;
+}
+
+.contact-send-btn {
+    background-image: linear-gradient(
+        to right,
+        rgb(28, 3, 87),
+        rgb(87, 13, 148)
+    );
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+@media screen and (min-width: 750px) {
+    .contact-form {
+        width: 45%;
+    }
+}

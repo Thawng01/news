@@ -1,6 +1,5 @@
 .detail-container {
     display: flex;
-    flex-direction: column;
 }
 .detail-item {
     display: flex;
@@ -9,11 +8,6 @@
 
 .detail-side-container {
     display: flex;
-    flex: 1.4;
-    flex-direction: column;
-}
-
-.detail-subscribe {
     display: none;
 }
 
@@ -23,16 +17,17 @@
 }
 
 @media screen and (min-width: 950px) {
+    .detail-side-container {
+        display: block;
+    }
+
     .detail-container {
         flex-direction: row;
         padding: 20px;
     }
 
-    .detail-subscribe {
-        display: block;
-    }
-
-    .detail-popular-list {
-        height: 60vh;
+    .detail-popular-list-container {
+        height: 50vh;
+        overflow: auto;
     }
 }

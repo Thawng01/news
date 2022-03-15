@@ -20,6 +20,7 @@ const Home = () => {
     const loading = useSelector(selectedLoading);
     const error = useSelector(selectedError);
     const popular = useSelector(selectedPopularNews);
+    console.log(popular);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -34,7 +35,11 @@ const Home = () => {
     if (loading === "loading") {
         content = <Loading />;
     } else if (error !== null) {
-        content = <Error onRefresh={handleRefresh} />;
+        content = (
+            <Error error="Something went wrong!" onRefresh={handleRefresh} />
+        );
+    } else if (popular?.status === "error") {
+        content = <Error error={popular?.message} onRefresh={handleRefresh} />;
     } else {
         content = (
             <>

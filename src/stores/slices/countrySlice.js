@@ -29,9 +29,9 @@ const countrySlice = createSlice({
                 state.loading = "loading";
             })
 
-            .addCase(fetchPostByCountry, (state, { payload }) => {
-                state.loading = "idle";
+            .addCase(fetchPostByCountry.fulfilled, (state, { payload }) => {
                 state.country = payload;
+                state.loading = "idle";
             })
             .addCase(fetchPostByCountry.rejected, (state, action) => {
                 state.loading = "idle";

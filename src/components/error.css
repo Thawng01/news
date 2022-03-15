@@ -8,6 +8,8 @@
 
 .error-message {
     color: red;
+    width: 50%;
+    text-align: center;
 }
 
 .try-again-btn {

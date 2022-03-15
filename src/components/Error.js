@@ -1,9 +1,9 @@
 import "./error.css";
 
-const Error = ({ onRefresh }) => {
+const Error = ({ onRefresh, error }) => {
     return (
         <div className="error-message-container">
-            <span className="error-message">Something went wrong!</span>
+            <span className="error-message">{error}</span>
             <span className="try-again-btn" onClick={onRefresh}>
                 Try again
             </span>

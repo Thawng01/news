@@ -3,7 +3,7 @@ import useNavContext from "../../hook/useNavContext";
 
 import "./navListItem.css";
 
-const NavListItem = ({ item, country }) => {
+const NavListItem = ({ item, country, contact }) => {
     const { setShowNav } = useNavContext();
 
     const handleShowNav = () => setShowNav(false);
@@ -11,6 +11,8 @@ const NavListItem = ({ item, country }) => {
     let type = `category/${item.name.toLowerCase()}`;
     if (country) {
         type = `country/${item.code}`;
+    } else if (contact) {
+        type = `contact`;
     }
 
     return (

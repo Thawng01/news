@@ -28,13 +28,13 @@ const CardListItem = ({ item }) => {
                         ? item.title.slice(0, 40) + "..."
                         : item.title}
                 </Link>
-                <p className="recent-list-author-label">
+                <span className="recent-list-author-label">
                     Author :
                     <span className="recent-list-author">{item.author}</span>
-                </p>
-                <p className="recent-list-date">
+                </span>
+                <span className="recent-list-date">
                     {moment(item.publishedAt).fromNow()}
-                </p>
+                </span>
             </div>
         </div>
     );

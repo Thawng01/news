@@ -37,7 +37,13 @@ const Category = () => {
     if (loading === "loading") {
         content = <Loading />;
     } else if (error !== null) {
-        content = <Error onRefresh={handleRefresh} />;
+        content = (
+            <Error error="Something went wrong!" onRefresh={handleRefresh} />
+        );
+    } else if (postByCategory?.status === "error") {
+        content = (
+            <Error onRefresh={handleRefresh} error={postByCategory?.message} />
+        );
     } else {
         content = postByCategory?.articles?.map((item, i) => {
             return <CardListItem key={i} item={item} />;

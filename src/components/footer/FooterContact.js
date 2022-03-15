@@ -8,7 +8,7 @@ const FooterContact = () => {
             <h3 className="footer-category-title">ABOUT</h3>
             <ul className="footer-item-lists">
                 {about.map((item) => {
-                    return <NavListItem key={item.id} item={item} />;
+                    return <NavListItem key={item.id} item={item} contact />;
                 })}
             </ul>
         </div>

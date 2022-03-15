@@ -1,48 +1,63 @@
-import { useRef, useState } from "react";
-import { MdSearch, MdClear } from "react-icons/md";
+import { useEffect, useRef } from "react";
+import { MdClear, MdArrowBack } from "react-icons/md";
+
+import { useNavigate } from "react-router-dom";
 
 import "./headerSearch.css";
 
-const HeaderSearch = () => {
-    const [showSearch, setShowSearch] = useState(false);
-    const [value, setValue] = useState("");
+const HeaderSearch = ({
+    onShowSearch,
+    showSearch,
+    value,
+    handleChange,
+    handleClear,
+}) => {
+    const inputRef = useRef();
+    const navigate = useNavigate();
 
-    const ref = useRef();
-
-    const onShowSearch = () => {
-        setShowSearch(true);
-        ref?.current?.focus();
+    const handleSearch = () => {
+        navigate(`/search/${value.toLowerCase()}`);
+        onShowSearch();
     };
 
-    const onHideSearch = () => {
-        setShowSearch(false);
-        setValue("");
-    };
-    const handleChange = (e) => setValue(e.target.value);
-
-    const clearValue = () => setValue("");
+    useEffect(() => {
+        if (showSearch) {
+            inputRef?.current?.focus();
+        }
+    }, [showSearch]);
 
     return (
         <div
             className="search-container"
-            style={{ width: showSearch ? 400 : 0 }}
+            style={{
+                visibility: showSearch ? "visible" : "hidden",
+                opacity: showSearch ? 1 : 0,
+            }}
         >
-            <input
-                ref={ref}
-                placeholder="Search..."
-                style={{ padding: showSearch ? 7 : 0 }}
-                className="search-input"
-                onBlur={onHideSearch}
-                value={value}
-                onChange={handleChange}
-            />
-            {value.length > 0 && (
-                <MdClear className="clear-icon" onClick={clearValue} />
-            )}
+            <MdArrowBack className="search-back-icon" onClick={onShowSearch} />
+            <div className="header-search-center-item">
+                <div className="header-search-input-container">
+                    <input
+                        ref={inputRef}
+                        placeholder="Search..."
+                        className="header-search-input"
+                        value={value}
+                        onChange={handleChange}
+                    />
+                    {value.length > 0 && (
+                        <MdClear
+                            className="header-search-clear-icon"
+                            onClick={handleClear}
+                        />
+                    )}
+                </div>
 
-            <div className="search" onClick={onShowSearch}>
-                <MdSearch className="search-icon" />
+                <div className="header-search-btn" onClick={handleSearch}>
+                    <span className="header-search-btn-label">Search</span>
+                </div>
             </div>
+
+            <MdClear className="search-close-icon" onClick={onShowSearch} />
         </div>
     );
 };

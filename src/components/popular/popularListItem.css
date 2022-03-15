@@ -2,7 +2,7 @@
     display: flex;
     margin: 10px;
     cursor: pointer;
-    width: 450px;
+    width: 500px;
 }
 
 .popular-list-image {
@@ -13,6 +13,8 @@
 
 .popular-list-detail {
     padding: 0 7px;
+    overflow: hidden;
+    height: 100px;
 }
 
 .popular-list-title {
@@ -26,6 +28,12 @@
     text-decoration: underline;
 }
 
+.popular-list-author {
+    display: block;
+    color: grey;
+    font-style: italic;
+}
+
 .popular-list-date {
     color: gray;
     font-size: 14px;
@@ -33,14 +41,21 @@
     user-select: none;
 }
 
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 750px) {
     .popular-list-container {
-        width: 300px;
+        width: 380px;
     }
 }
+
+/* @media screen and (min-width: 840px) {
+    .popular-list-container {
+        width: 335px;
+    }
+} */
 
 @media screen and (min-width: 950px) {
     .popular-list-container {
         margin: 6px 0;
+        width: 335px;
     }
 }

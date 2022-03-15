@@ -15,10 +15,12 @@ const PopularListItem = ({ item }) => {
                 >
                     {item.title}
                 </Link>
-                <p className="popular-list-author">Author : {item.author}</p>
-                <p className="popular-list-date">
+                <span className="popular-list-author">
+                    Author : {item.author}
+                </span>
+                <span className="popular-list-date">
                     {moment(item.publishedAt).fromNow()}
-                </p>
+                </span>
             </div>
         </div>
     );

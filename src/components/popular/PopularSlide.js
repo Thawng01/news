@@ -52,12 +52,12 @@ const PopularSlide = ({ articles }) => {
                             >
                                 {item.title}
                             </Link>
-                            <p className="popular-slide-author">
+                            <span className="popular-slides-author">
                                 Author : {item?.author}
-                            </p>
-                            <p className="popular-slide-date">
+                            </span>
+                            <span className="popular-slides-date">
                                 Published At : {item.publishedAt}
-                            </p>
+                            </span>
                         </div>
                     </div>
                 );
