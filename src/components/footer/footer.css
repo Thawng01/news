@@ -3,7 +3,7 @@
     padding: 50px 0 15px 0;
 }
 
-.lian-menu-container {
+.footer-menu-container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,49 +24,8 @@
     margin-top: 20px;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0 10px 0;
-}
-
-.social-icon {
-    margin: 12px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.fa {
-    background-color: #3b5998;
-}
-
-.twitter {
-    background-color: #55acee;
-}
-
-.youtube {
-    background-color: #bb0000;
-}
-
-.instagram {
-    background-color: #125688;
-}
-
-.fb-icon,
-.youtube-icon,
-.instagram-icon,
-.twitter-icon {
-    color: #fff;
-    font-size: 25px;
-}
-
 @media screen and (min-width: 900px) {
-    .lian-menu-container {
+    .footer-menu-container {
         flex-direction: row;
         align-items: flex-start;
     }

@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./footerCountry.css";
 import { countries } from "../../data";
 import NavListItem from "../navBar/NavListItem";
 

@@ -1,5 +1,6 @@
 import { about } from "../../data";
 import NavListItem from "../navBar/NavListItem";
+import "./footerContact.css";
 
 const FooterContact = () => {
     return (

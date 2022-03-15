@@ -4,11 +4,12 @@
     justify-content: center;
     flex-direction: column;
     height: 50vh;
+    width: 80vw;
 }
 
 .error-message {
     color: red;
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
 
@@ -19,4 +20,10 @@
     margin: 8px 0;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+    .error-message-container {
+        width: 50vw;
+    }
 }
