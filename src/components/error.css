@@ -5,6 +5,7 @@
     flex-direction: column;
     height: 50vh;
     width: 80vw;
+    background-color: antiquewhite;
 }
 
 .error-message {
