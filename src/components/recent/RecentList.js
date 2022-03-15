@@ -15,6 +15,7 @@ const RecentList = ({ home }) => {
     const recentNews = useSelector(selectedRecentNews);
 
     const totalPages = Math.round(recentNews.totalResults / 8);
+
     const dispatch = useDispatch();
 
     useEffect(() => {

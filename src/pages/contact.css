@@ -70,6 +70,10 @@
     border-radius: 3px;
 }
 
+.contact-send-btn:hover {
+    opacity: 0.84;
+}
+
 @media screen and (min-width: 750px) {
     .contact-form {
         width: 45%;

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { MdClear, MdArrowBack } from "react-icons/md";
 
 import { useNavigate } from "react-router-dom";
@@ -19,12 +19,6 @@ const HeaderSearch = ({
         navigate(`/search/${value.toLowerCase()}`);
         onShowSearch();
     };
-
-    useEffect(() => {
-        if (showSearch) {
-            inputRef?.current?.focus();
-        }
-    }, [showSearch]);
 
     return (
         <div

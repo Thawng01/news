@@ -37,6 +37,10 @@
     cursor: pointer;
 }
 
+.footer-subscribe-submit-btn:hover {
+    opacity: 0.9;
+}
+
 .footer-subscribe-error {
     color: red;
 }

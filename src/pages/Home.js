@@ -20,7 +20,7 @@ const Home = () => {
     const loading = useSelector(selectedLoading);
     const error = useSelector(selectedError);
     const popular = useSelector(selectedPopularNews);
-    console.log(popular);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -53,7 +53,7 @@ const Home = () => {
         );
     }
 
-    return <div className="home">{content}</div>;
+    return content;
 };
 
 export default Home;
