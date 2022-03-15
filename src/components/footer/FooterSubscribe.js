@@ -20,12 +20,12 @@ const FooterSubscribe = ({ footer }) => {
 
     return (
         <div className="footer-subscribe">
-            <h3
+            <h4
                 style={{ color: footer ? "#fff" : "#000" }}
                 className="footer-subscribe-title"
             >
                 SUBSCRIBE
-            </h3>
+            </h4>
             <p
                 style={{ color: footer ? "#fff" : "#000" }}
                 className="footer-subscribe-text"

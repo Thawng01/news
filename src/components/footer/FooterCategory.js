@@ -8,7 +8,7 @@ const FooterCategory = () => {
     return (
         /* share styles with other footer component */
         <div className="footer-category">
-            <h3 className="footer-category-title">CATEGORIES</h3>
+            <h4 className="footer-category-title">CATEGORIES</h4>
             <ul className="footer-item-lists">
                 {categories.map((item) => {
                     return <NavListItem key={item.id} item={item} />;
