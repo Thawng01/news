@@ -38,7 +38,7 @@ const Detail = () => {
         dispatch(fetchPopularNews());
 
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [title]);
+    }, [dispatch, title]);
 
     return (
         <div className="detail">

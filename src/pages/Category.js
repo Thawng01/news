@@ -28,7 +28,7 @@ const Category = () => {
     useEffect(() => {
         dispatch(fetchPostByCategory(name));
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [name, refresh]);
+    }, [dispatch, name, refresh]);
 
     const handleRefresh = () => setRefresh(!refresh);
 
