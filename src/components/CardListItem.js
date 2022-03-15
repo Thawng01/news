@@ -6,7 +6,11 @@ import "./cardListItem.css";
 const CardListItem = ({ item }) => {
     return (
         <div className="recent-list-item">
-            <img src={item.urlToImage} className="recent-list-image" />
+            <img
+                src={item.urlToImage}
+                alt="card image"
+                className="recent-list-image"
+            />
             <div className="recent-image-overlay">
                 <Link
                     to={{

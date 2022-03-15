@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 import DetailItem from "../components/DetailItem";
-import PopularList from "../components/popular/PopularList";
 import {
     fetchPopularNews,
     selectedPopularNews,
@@ -10,7 +11,6 @@ import FooterSubscribe from "../components/footer/FooterSubscribe";
 import RecentList from "../components/recent/RecentList";
 
 import "./detail.css";
-import { useEffect } from "react";
 import PopularListItem from "../components/popular/PopularListItem";
 
 const Detail = () => {

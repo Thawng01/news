@@ -6,7 +6,11 @@ import "./popularListItem.css";
 const PopularListItem = ({ item }) => {
     return (
         <div className="popular-list-container">
-            <img src={item.urlToImage} className="popular-list-image" />
+            <img
+                src={item.urlToImage}
+                alt="popular image"
+                className="popular-list-image"
+            />
             <div className="popular-list-detail">
                 <Link
                     to={`detail/${item.title}`}

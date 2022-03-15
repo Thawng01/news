@@ -1,8 +1,8 @@
 import React from "react";
-import { MdOutlineFacebook } from "react-icons/md";
-import { IoLogoYoutube, IoLogoInstagram, IoLogoTwitter } from "react-icons/io5";
+import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { ImYoutube2 } from "react-icons/im";
+
 import "./footer.css";
 import FooterCategory from "./FooterCategory";
 import FooterContact from "./FooterContact";

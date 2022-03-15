@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import "./popularSlide.css";
 const PopularSlide = ({ articles }) => {
     const indexRef = useRef(1);
 
-    const onSlide = (n) => {
+    const onSlide = useCallback((n) => {
         const tags = document.getElementsByClassName("popular-slide-item");
         let tagsL = tags.length;
 
@@ -22,7 +22,7 @@ const PopularSlide = ({ articles }) => {
             tags[i].style.display = "none";
         }
         tags[indexRef.current - 1].style.display = "block";
-    };
+    }, []);
 
     useEffect(() => {
         if (articles?.length > 0) {
@@ -42,6 +42,7 @@ const PopularSlide = ({ articles }) => {
                     <div key={i} className="popular-slide-item">
                         <img
                             src={item.urlToImage}
+                            alt="slide image"
                             className="popular-image image-fade"
                         />
                         <div className="popular-slide-details">
