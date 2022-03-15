@@ -8,7 +8,7 @@ const PopularListItem = ({ item }) => {
         <div className="popular-list-container">
             <img
                 src={item.urlToImage}
-                alt="popular image"
+                alt="popular"
                 className="popular-list-image"
             />
             <div className="popular-list-detail">

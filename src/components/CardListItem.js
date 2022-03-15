@@ -8,7 +8,7 @@ const CardListItem = ({ item }) => {
         <div className="recent-list-item">
             <img
                 src={item.urlToImage}
-                alt="card image"
+                alt="card"
                 className="recent-list-image"
             />
             <div className="recent-image-overlay">

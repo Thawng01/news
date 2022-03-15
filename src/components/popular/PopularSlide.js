@@ -42,7 +42,7 @@ const PopularSlide = ({ articles }) => {
                     <div key={i} className="popular-slide-item">
                         <img
                             src={item.urlToImage}
-                            alt="slide image"
+                            alt="slide"
                             className="popular-image image-fade"
                         />
                         <div className="popular-slide-details">
