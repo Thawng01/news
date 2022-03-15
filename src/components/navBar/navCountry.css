@@ -1,5 +1,4 @@
 .nav-country {
-    margin-left: 40px;
     transition: all 1s ease;
     opacity: 0;
 }
@@ -12,8 +11,15 @@
 .nav-country-title {
     color: #fff;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .nav-country-ul {
     list-style: none;
+}
+
+@media screen and (min-width: 600px) {
+    .nav-country {
+        margin-left: 40px;
+    }
 }

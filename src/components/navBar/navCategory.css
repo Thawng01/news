@@ -1,5 +1,4 @@
 .nav-category {
-    margin-right: 40px;
     transition: all 1s ease;
     opacity: 0;
 }
@@ -7,8 +6,15 @@
 .nav-category-title {
     color: #fff;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .nav-item-lists {
     list-style: none;
+}
+
+@media screen and (min-width: 600px) {
+    .nav-category {
+        margin-right: 40px;
+    }
 }
