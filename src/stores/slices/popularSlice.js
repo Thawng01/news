@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const URL = `https://192.168.43.240:9000/api/news/popular`;
+const URL = `https://enigmatic-wildwood-52669.herokuapp.com/api/news/popular`;
 
 const initialState = {
     popular: {},

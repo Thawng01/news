@@ -53,7 +53,7 @@ const Home = () => {
         );
     }
 
-    return content;
+    return <div className="home">{content}</div>;
 };
 
 export default Home;

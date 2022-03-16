@@ -9,7 +9,7 @@ const initialState = {
 export const fetchPostByCategory = createAsyncThunk(
     "category/fetchPostByCategory",
     async (category) => {
-        const URL = `https://192.168.43.240:9000/api/news/category/${category}`;
+        const URL = `https://enigmatic-wildwood-52669.herokuapp.com/api/news/category/${category}`;
 
         const response = await fetch(URL);
         return await response.json();
