@@ -10,7 +10,7 @@ export const fetchRecentNews = createAsyncThunk(
         // let hr = new Date(Date.now() - 3600 * 1000).toISOString();
         // let now = new Date().toISOString();
 
-        const URL = `http://192.168.43.240:9000/api/news/recent/${page}`;
+        const URL = `https://192.168.43.240:9000/api/news/recent/${page}`;
         const response = await fetch(URL);
         return await response.json();
     }

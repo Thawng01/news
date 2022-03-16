@@ -9,7 +9,7 @@ const initialState = {
 export const fetchPostBySearch = createAsyncThunk(
     "search/fetchPostBySearch",
     async (value) => {
-        const URL = `http://192.168.43.240:9000/api/news/search/${value}`;
+        const URL = `https://192.168.43.240:9000/api/news/search/${value}`;
         const response = await fetch(URL);
         return await response.json();
     }

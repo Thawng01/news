@@ -9,7 +9,7 @@ const initialState = {
 export const fetchPostByCountry = createAsyncThunk(
     "country/fetchPostByCountry",
     async (country) => {
-        const URL = `http://192.168.43.240:9000/api/news/country/${country}`;
+        const URL = `https://192.168.43.240:9000/api/news/country/${country}`;
 
         const response = await fetch(URL);
 
