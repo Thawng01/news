@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { API_KEY } from "../../api_key";
 
-const URL = `https://newsapi.org/v2/everything?q=everything&sortBy=popularity&pageSize=8&apiKey=${API_KEY}`;
+const URL = `http://192.168.43.240:9000/api/news/popular`;
 
 const initialState = {
     popular: {},

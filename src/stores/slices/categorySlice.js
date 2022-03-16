@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { API_KEY } from "../../api_key";
-
 const initialState = {
     category: {},
     loading: "idle",
@@ -11,7 +9,7 @@ const initialState = {
 export const fetchPostByCategory = createAsyncThunk(
     "category/fetchPostByCategory",
     async (category) => {
-        const URL = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${API_KEY}`;
+        const URL = `http://192.168.43.240:9000/api/news/category/${category}`;
 
         const response = await fetch(URL);
         return await response.json();

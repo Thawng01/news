@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { API_KEY } from "../../api_key";
 
 const initialState = {
     country: {},
@@ -10,7 +9,7 @@ const initialState = {
 export const fetchPostByCountry = createAsyncThunk(
     "country/fetchPostByCountry",
     async (country) => {
-        const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY}`;
+        const URL = `http://192.168.43.240:9000/api/news/country/${country}`;
 
         const response = await fetch(URL);
 

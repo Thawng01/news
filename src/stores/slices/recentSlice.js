@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { API_KEY } from "../../api_key";
 
 const initialState = {
     recent: {},
@@ -8,10 +7,10 @@ const initialState = {
 export const fetchRecentNews = createAsyncThunk(
     "recent/fetchRecentNews",
     async (page) => {
-        let hr = new Date(Date.now() - 3600 * 1000).toISOString();
-        let now = new Date().toISOString();
+        // let hr = new Date(Date.now() - 3600 * 1000).toISOString();
+        // let now = new Date().toISOString();
 
-        const URL = `https://newsapi.org/v2/everything?q=everything&from=${hr}&to=${now}&sortBy=publishedAt&pageSize=8&page=${page}&apiKey=${API_KEY}`;
+        const URL = `http://192.168.43.240:9000/api/news/recent/${page}`;
         const response = await fetch(URL);
         return await response.json();
     }
