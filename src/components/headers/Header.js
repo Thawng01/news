@@ -46,7 +46,7 @@ const Header = ({ onToggleMenu }) => {
                     <HeaderMenuList />
                 </div>
 
-                <div className="search" onClick={handleShowSearch}>
+                <div className="header-search" onClick={handleShowSearch}>
                     <MdSearch className="search-icon" />
                 </div>
             </div>

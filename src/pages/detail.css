@@ -1,3 +1,7 @@
+.detail {
+    width: 100%;
+}
+
 .detail-container {
     display: flex;
 }
