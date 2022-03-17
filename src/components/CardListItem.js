@@ -28,7 +28,7 @@ const CardListItem = ({ item }) => {
                     state={{ type: "recent" }}
                     className="recent-list-title"
                 >
-                    {item.title.length > 40
+                    {item.title?.length > 40
                         ? item.title.slice(0, 40) + "..."
                         : item.title}
                 </Link>

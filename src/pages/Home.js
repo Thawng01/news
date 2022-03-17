@@ -42,14 +42,14 @@ const Home = () => {
         content = <Error error={popular?.message} onRefresh={handleRefresh} />;
     } else {
         content = (
-            <>
+            <div className="home-container">
                 <div className="popular-container">
                     <PopularSlide articles={popular?.articles} />
                     <PopularList articles={popular?.articles} />
                 </div>
 
                 <RecentList home />
-            </>
+            </div>
         );
     }
 

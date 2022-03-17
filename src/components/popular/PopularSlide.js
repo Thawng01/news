@@ -49,7 +49,7 @@ const PopularSlide = ({ articles }) => {
                             <Link
                                 to={`detail/${item.title}`}
                                 state={{ type: "popular" }}
-                                className="popular-slide-title"
+                                className="popular-slide-card-title"
                             >
                                 {item.title}
                             </Link>
