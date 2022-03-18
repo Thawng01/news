@@ -1,22 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+import "./detail.css";
 import DetailItem from "../components/DetailItem";
-import {
-    fetchPopularNews,
-    selectedPopularNews,
-} from "../stores/slices/popularSlice";
+import { selectedPopularNews } from "../stores/slices/popularSlice";
 import FooterSubscribe from "../components/footer/FooterSubscribe";
 import RecentList from "../components/recent/RecentList";
-
-import "./detail.css";
 import PopularListItem from "../components/popular/PopularListItem";
+import usePopular from "../hook/usePopular";
 
 const Detail = () => {
     const { title } = useParams();
     const location = useLocation();
-
+    const { fetchPopularPost } = usePopular();
     const popular = useSelector(selectedPopularNews);
 
     const article = useSelector((state) => {
@@ -32,13 +29,10 @@ const Detail = () => {
         }
     });
 
-    const dispatch = useDispatch();
-
     useEffect(() => {
-        dispatch(fetchPopularNews());
-
+        fetchPopularPost();
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [dispatch, title]);
+    }, []);
 
     return (
         <div className="detail">

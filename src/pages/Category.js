@@ -1,34 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 import { useParams } from "react-router-dom";
-
-import {
-    categoryError,
-    fetchPostByCategory,
-    selectedCategory,
-    selectedLoading,
-} from "../stores/slices/categorySlice";
 
 import "./category.css";
 import CardListItem from "../components/CardListItem";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import useCategory from "../hook/useCategory";
 
 const Category = () => {
     const { name } = useParams();
     const [refresh, setRefresh] = useState(false);
 
-    const loading = useSelector(selectedLoading);
-    const postByCategory = useSelector(selectedCategory);
-    const error = useSelector(categoryError);
-
-    const dispatch = useDispatch();
+    const { error, loading, fetchCategoryPost, postByCategory } = useCategory();
 
     useEffect(() => {
-        dispatch(fetchPostByCategory(name));
+        fetchCategoryPost(name);
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [dispatch, name, refresh]);
+    }, [name, refresh]);
 
     const handleRefresh = () => setRefresh(!refresh);
 
@@ -40,7 +29,7 @@ const Category = () => {
         content = (
             <Error error="Something went wrong!" onRefresh={handleRefresh} />
         );
-    } else if (postByCategory?.status === "error") {
+    } else if (postByCategory?.message) {
         content = (
             <Error onRefresh={handleRefresh} error={postByCategory?.message} />
         );

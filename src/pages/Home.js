@@ -1,32 +1,21 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 import "./home.css";
-import {
-    fetchPopularNews,
-    selectedError,
-    selectedLoading,
-    selectedPopularNews,
-} from "../stores/slices/popularSlice";
 import PopularSlide from "../components/popular/PopularSlide";
 import PopularList from "../components/popular/PopularList";
 import RecentList from "../components/recent/RecentList";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
+import usePopular from "../hook/usePopular";
 
 const Home = () => {
     const [refresh, setRefresh] = useState(false);
-
-    const loading = useSelector(selectedLoading);
-    const error = useSelector(selectedError);
-    const popular = useSelector(selectedPopularNews);
-
-    const dispatch = useDispatch();
+    const { error, loading, popular, fetchPopularPost } = usePopular();
 
     useEffect(() => {
-        dispatch(fetchPopularNews());
+        fetchPopularPost();
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [dispatch, refresh]);
+    }, [refresh, fetchPopularPost]);
 
     const handleRefresh = () => setRefresh(!refresh);
 
@@ -38,7 +27,7 @@ const Home = () => {
         content = (
             <Error error="Something went wrong!" onRefresh={handleRefresh} />
         );
-    } else if (popular?.status === "error") {
+    } else if (popular?.message) {
         content = <Error error={popular?.message} onRefresh={handleRefresh} />;
     } else {
         content = (

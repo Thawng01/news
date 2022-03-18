@@ -7,12 +7,18 @@ const DetailItem = ({ item }) => {
             <span>
                 Author :<span className="detail-author">{item.author}</span>
             </span>
-            <span>
+            <span className="detail-date-container">
                 Date :<span className="detail-date">{item.publishedAt}</span>
             </span>
-            <p>{item.description}</p>
-            <img className="detail-image" alt="detail" src={item.urlToImage} />
-            <span>{item.content}</span>
+            <p className="detail-description">{item.description}</p>
+            <div className="detail-image-container">
+                <img
+                    className="detail-image"
+                    alt="detail"
+                    src={item.urlToImage}
+                />
+            </div>
+            <span className="detail-content">{item.content}</span>
             <a className="detail-read-more" href={item.url}>
                 Read more
             </a>

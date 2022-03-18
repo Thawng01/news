@@ -37,7 +37,7 @@ const Search = () => {
         content = (
             <Error error="Something went wrong!" onRefresh={handleRefresh} />
         );
-    } else if (postBySearch?.status === "error") {
+    } else if (postBySearch?.message) {
         content = (
             <Error onRefresh={handleRefresh} error={postBySearch?.message} />
         );

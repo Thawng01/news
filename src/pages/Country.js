@@ -1,32 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import { useParams } from "react-router-dom";
 
 import CardListItem from "../components/CardListItem";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
-import {
-    fetchPostByCountry,
-    selectedCountry,
-    selectedError,
-    selectedLoading,
-} from "../stores/slices/countrySlice";
+import useCountry from "../hook/useCountry";
 
 const Country = () => {
     const { name } = useParams();
-
     const [refresh, setRefresh] = useState(false);
 
-    const error = useSelector(selectedError);
-    const loading = useSelector(selectedLoading);
-    const postByCountry = useSelector(selectedCountry);
-
-    const dispatch = useDispatch();
+    const { error, loading, postByCountry, fetchCountryPost } = useCountry();
 
     useEffect(() => {
-        dispatch(fetchPostByCountry(name));
+        fetchCountryPost(name);
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [dispatch, name, refresh]);
+    }, [name, refresh]);
 
     const handleRefresh = () => setRefresh(!refresh);
 
@@ -38,7 +28,7 @@ const Country = () => {
         content = (
             <Error error="Something went wrong!" onRefresh={handleRefresh} />
         );
-    } else if (postByCountry?.status === "error") {
+    } else if (postByCountry?.message) {
         content = (
             <Error onRefresh={handleRefresh} error={postByCountry?.message} />
         );

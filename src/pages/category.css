@@ -4,3 +4,33 @@
     justify-content: center;
     width: 100%;
 }
+
+.category-enter {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.category-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1000ms;
+}
+
+.category-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.category-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1000ms;
+}
+
+.category-enter-done {
+    opacity: 1;
+}
+
+.category-exit-done {
+    opacity: 0;
+}

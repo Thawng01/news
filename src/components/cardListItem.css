@@ -20,8 +20,13 @@
     text-decoration: underline;
 }
 
-.recent-list-image {
+.recent-list-image-container {
     height: 65%;
+    width: 100%;
+}
+
+.recent-list-image {
+    height: 100%;
     width: 100%;
     user-select: none;
 }
