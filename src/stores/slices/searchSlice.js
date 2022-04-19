@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import url from "../../api";
 
 const initialState = {
     search: {},
@@ -9,7 +10,7 @@ const initialState = {
 export const fetchPostBySearch = createAsyncThunk(
     "search/fetchPostBySearch",
     async (value) => {
-        const URL = `http://192.168.43.240:9000/api/news/search/${value}`;
+        const URL = `${url}/news/search/${value}`;
         const response = await fetch(URL);
         return await response.json();
     }

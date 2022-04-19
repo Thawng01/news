@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import url from "../../api";
 
 const initialState = {
     recent: {},
@@ -7,7 +8,7 @@ const initialState = {
 export const fetchRecentNews = createAsyncThunk(
     "recent/fetchRecentNews",
     async (page) => {
-        const URL = `http://192.168.43.240:9000/api/news/recent/${page}`;
+        const URL = `${url}/news/recent/${page}`;
         const response = await fetch(URL);
         return await response.json();
     }

@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-const URL = `http://192.168.43.240:9000/api/news/popular`;
+import url from "../../api";
 
 const initialState = {
     popular: {},
@@ -11,7 +10,7 @@ const initialState = {
 export const fetchPopularNews = createAsyncThunk(
     "popular/fetchPopular",
     async () => {
-        const response = await fetch(URL);
+        const response = await fetch(`${url}/news/popular`);
         return await response.json();
     }
 );

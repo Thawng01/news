@@ -1,17 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+import url from "../../api";
+
 const initialState = {
     category: {},
     loading: "idle",
     error: null,
 };
 
-const url = "https://enigmatic-wildwood-52669.herokuapp.com";
-
 export const fetchPostByCategory = createAsyncThunk(
     "category/fetchPostByCategory",
     async (category) => {
-        const URL = `http://192.168.43.240:9000/api/news/category/${category}`;
+        const URL = `${url}/news/category/${category}`;
 
         const response = await fetch(URL);
         return await response.json();
