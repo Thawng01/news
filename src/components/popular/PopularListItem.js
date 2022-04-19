@@ -13,7 +13,7 @@ const PopularListItem = ({ item }) => {
             />
             <div className="popular-list-detail">
                 <Link
-                    to={`detail/${item.title}`}
+                    to={`/detail/${item.title}`}
                     state={{ type: "popular" }}
                     className="popular-list-title"
                 >

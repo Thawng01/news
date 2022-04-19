@@ -2,21 +2,22 @@ import "./navCategory.css";
 import NavListItem from "./NavListItem";
 import useNavContext from "../../hook/useNavContext";
 import { categories } from "../../data";
+import { useRef } from "react";
 
 const NavCategory = () => {
     const { showNav } = useNavContext();
+    const ref = useRef();
 
     setTimeout(() => {
-        const listTag = document.getElementsByClassName("nav-category")[0];
         if (showNav) {
-            listTag.classList.add("showList");
+            ref?.current?.classList.add("showList");
         } else {
-            listTag.classList.remove("showList");
+            ref?.current?.classList.remove("showList");
         }
     }, 200);
 
     return (
-        <div className="nav-category">
+        <div ref={ref} className="nav-category">
             <h2 className="nav-category-title">Categories</h2>
             <ul className="nav-item-lists">
                 {categories.map((item) => {

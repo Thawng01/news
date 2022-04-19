@@ -1,14 +1,16 @@
 .popular-list-container {
     display: flex;
+    align-items: center;
     margin: 10px;
     cursor: pointer;
     width: 510px;
 }
 
 .popular-list-image {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     user-select: none;
+    border-radius: 5px;
 }
 
 .popular-list-detail {
@@ -21,6 +23,7 @@
     text-decoration: none;
     font-weight: 600;
     color: #000;
+    font-size: 13px;
     user-select: none;
 }
 
@@ -31,12 +34,13 @@
 .popular-list-author {
     display: block;
     color: grey;
+    font-size: 12px;
     font-style: italic;
 }
 
 .popular-list-date {
     color: gray;
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
     user-select: none;
 }
@@ -52,6 +56,10 @@
         -webkit-box-shadow: 1px 1px 11px -2px rgba(0, 0, 0, 0.26);
         box-shadow: 1px 1px 11px -2px rgba(0, 0, 0, 0.26);
         border-radius: 3px;
+    }
+
+    .popular-list-image {
+        padding: 4px 7px
     }
 }
 

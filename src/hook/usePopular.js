@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -12,9 +13,9 @@ const usePopular = () => {
     const popular = useSelector(selectedPopularNews);
 
     const dispatch = useDispatch();
-    function fetchPopularPost() {
+    const fetchPopularPost = useCallback(() => {
         dispatch(fetchPopularNews());
-    }
+    }, [dispatch]);
 
     return { loading, error, popular, fetchPopularPost };
 };

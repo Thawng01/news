@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { MdClear, MdArrowBack } from "react-icons/md";
 
 import { useNavigate } from "react-router-dom";
@@ -12,12 +11,13 @@ const HeaderSearch = ({
     handleChange,
     handleClear,
 }) => {
-    const inputRef = useRef();
     const navigate = useNavigate();
 
-    const handleSearch = () => {
-        navigate(`/search/${value.toLowerCase()}`);
-        onShowSearch();
+    const handleSearch = (e) => {
+        if (e.key === "Enter") {
+            navigate(`/search/${value.toLowerCase()}`);
+            onShowSearch();
+        }
     };
 
     return (
@@ -32,11 +32,11 @@ const HeaderSearch = ({
             <div className="header-search-center-item">
                 <div className="header-search-input-container">
                     <input
-                        ref={inputRef}
                         placeholder="Search..."
                         className="header-search-input"
                         value={value}
                         onChange={handleChange}
+                        onKeyPress={(e) => handleSearch(e)}
                     />
                     {value.length > 0 && (
                         <MdClear
@@ -44,10 +44,6 @@ const HeaderSearch = ({
                             onClick={handleClear}
                         />
                     )}
-                </div>
-
-                <div className="header-search-btn" onClick={handleSearch}>
-                    <span className="header-search-btn-label">Search</span>
                 </div>
             </div>
 

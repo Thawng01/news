@@ -18,7 +18,8 @@ const Home = () => {
     }, [refresh, fetchPopularPost]);
 
     const handleRefresh = () => setRefresh(!refresh);
-
+    console.log(`loading: ${loading}`);
+    console.log(`error : ${error}`);
     let content;
 
     if (loading === "loading") {

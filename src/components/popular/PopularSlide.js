@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, memo } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -45,6 +45,7 @@ const PopularSlide = ({ articles }) => {
                             alt="slide"
                             className="popular-image image-fade"
                         />
+
                         <div className="popular-slide-details">
                             <Link
                                 to={`detail/${item.title}`}
@@ -80,4 +81,4 @@ const PopularSlide = ({ articles }) => {
     );
 };
 
-export default PopularSlide;
+export default memo(PopularSlide);

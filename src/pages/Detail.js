@@ -22,17 +22,28 @@ const Detail = () => {
             return state?.recent?.recent?.articles?.filter(
                 (item) => item.title === title
             );
-        } else {
+        } else if (type === "popular") {
             return state.popular.popular.articles.filter(
+                (item) => item.title === title
+            );
+        } else if (type === "country") {
+            return state?.country?.country?.articles?.filter(
+                (item) => item.title === title
+            );
+        } else if (type === "category") {
+            return state?.category?.category?.articles.filter(
                 (item) => item.title === title
             );
         }
     });
 
     useEffect(() => {
-        fetchPopularPost();
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
+    }, [article]);
+
+    useEffect(() => {
+        fetchPopularPost();
+    }, [fetchPopularPost]);
 
     return (
         <div className="detail">

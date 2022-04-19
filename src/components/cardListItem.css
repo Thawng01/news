@@ -9,7 +9,7 @@
 }
 
 .recent-list-title {
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
     color: #000;
     font-weight: 600;
@@ -64,7 +64,9 @@
 .recent-list-author-label {
     overflow: hidden;
     display: block;
+    font-size: 13px;
 }
+
 
 .recent-list-author {
     font-weight: 600;
@@ -74,7 +76,7 @@
 
 .recent-list-date {
     color: gray;
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
     user-select: none;
 }

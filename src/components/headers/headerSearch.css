@@ -41,11 +41,11 @@
     padding: 0 8px;
     background-color: inherit;
     color: #fff;
-    border-bottom: 1.4px solid #fff;
+    border-bottom: 1.2px solid #fff;
 }
 
 .header-search-input::placeholder {
-    color: #fff;
+    color: lightgray;
     opacity: 1;
 }
 
@@ -61,22 +61,8 @@
     cursor: pointer;
 }
 
-.header-search-btn {
-    margin: 0 10px;
-    background-color: red;
-    padding: 4px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 3px;
-}
 
-.header-search-btn-label {
-    color: #fff;
-}
-
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
     .header-search-input-container {
         width: 50%;
     }

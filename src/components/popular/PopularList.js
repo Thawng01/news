@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import "./popularList.css";
 import PopularListItem from "./PopularListItem";
 
@@ -11,4 +13,4 @@ const PopularList = ({ articles }) => {
     );
 };
 
-export default PopularList;
+export default memo(PopularList);

@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -13,9 +13,12 @@ const useCountry = () => {
     const postByCountry = useSelector(selectedCountry);
 
     const dispatch = useDispatch();
-    function fetchCountryPost(name) {
-        dispatch(fetchPostByCountry(name));
-    }
+    const fetchCountryPost = useCallback(
+        (name) => {
+            dispatch(fetchPostByCountry(name));
+        },
+        [dispatch]
+    );
 
     return { error, loading, postByCountry, fetchCountryPost };
 };

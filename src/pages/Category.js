@@ -17,7 +17,7 @@ const Category = () => {
     useEffect(() => {
         fetchCategoryPost(name);
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [name, refresh]);
+    }, [name, refresh, fetchCategoryPost]);
 
     const handleRefresh = () => setRefresh(!refresh);
 
@@ -35,7 +35,7 @@ const Category = () => {
         );
     } else {
         content = postByCategory?.articles?.map((item, i) => {
-            return <CardListItem key={i} item={item} />;
+            return <CardListItem key={i} item={item} category />;
         });
     }
 

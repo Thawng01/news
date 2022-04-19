@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -14,9 +15,12 @@ const useCategory = () => {
 
     const dispatch = useDispatch();
 
-    function fetchCategoryPost(name) {
-        dispatch(fetchPostByCategory(name));
-    }
+    const fetchCategoryPost = useCallback(
+        (name) => {
+            dispatch(fetchPostByCategory(name));
+        },
+        [dispatch]
+    );
 
     return { loading, postByCategory, error, fetchCategoryPost };
 };

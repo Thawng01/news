@@ -3,7 +3,14 @@ import moment from "moment";
 
 import "./cardListItem.css";
 
-const CardListItem = ({ item }) => {
+const CardListItem = ({ item, category, country }) => {
+    let state = "recent";
+    if (category) {
+        state = "category";
+    } else if (country) {
+        state = "country";
+    }
+
     return (
         <div className="recent-list-item">
             <div className="recent-list-image-container">
@@ -16,8 +23,8 @@ const CardListItem = ({ item }) => {
             <div className="recent-image-overlay">
                 <Link
                     to={{
-                        pathname: `detail/${item.title}`,
-                        state: "recent",
+                        pathname: `/detail/${item.title}`,
+                        state,
                     }}
                     className="recent-read-more"
                 >
@@ -27,7 +34,7 @@ const CardListItem = ({ item }) => {
             <div className="recent-list-detail">
                 <Link
                     to={`/detail/${item.title}`}
-                    state={{ type: "recent" }}
+                    state={{ type: state }}
                     className="recent-list-title"
                 >
                     {item.title?.length > 40

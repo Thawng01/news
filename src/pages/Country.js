@@ -16,7 +16,7 @@ const Country = () => {
     useEffect(() => {
         fetchCountryPost(name);
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [name, refresh]);
+    }, [name, refresh, fetchCountryPost]);
 
     const handleRefresh = () => setRefresh(!refresh);
 
@@ -34,7 +34,7 @@ const Country = () => {
         );
     } else {
         content = postByCountry?.articles?.map((item, i) => {
-            return <CardListItem key={i} item={item} />;
+            return <CardListItem key={i} item={item} country />;
         });
     }
 
