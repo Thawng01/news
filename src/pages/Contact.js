@@ -32,7 +32,6 @@ const Contact = () => {
 
     const handleBlur = (e) => {
         const { type, value } = e.target;
-        console.log(e.target);
         if (type === "text") {
             if (value === "") {
                 const nameTag = document.getElementById("name");
